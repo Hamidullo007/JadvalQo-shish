@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamidullo Mirzaikromov</title>
+</head>
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>T/r</th>
+            <th>Ism</th>
+            <th>Familya</th>
+            <th>Kasbi</th>
+            <th>O'chirish</th>
+          </tr>
+        </thead>
+        <tbody class="tab">
+            <%var i = 1;%>
+            <%if(malumotlar){%>
+                <%malumotlar.forEach((mal) => {%>
+                    <tr>
+                        <td><%=i%></td>
+                        <td><%=mal.ism%></td>
+                        <td><%=mal.familya%></td>
+                        <td><%=mal.sharif%></td>
+                        <td>
+                            <form action="/api/malumotlar/maxsus10158/<%=mal.id%>" method="post">
+                                <input type="submit" value="O'chirish" style="background-color: rgb(64, 64, 255); color: white;">
+                            </form>
+                        </td>
+                    </tr>
+                    <%i++%>
+                <%})%>
+            <%}%>
+        </tbody>
+      </table>
+</body>
+</html>
